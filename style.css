@@ -192,9 +192,17 @@ header nav a.active::after {
     }
     .home-content h1 {
         font-size: 2rem;
-    }
+    }  
 }
-
+.skills-list span {
+  display: inline-block;
+  background: #007acc;
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 20px;
+  margin: 6px;
+  font-size: 0.85rem;
+}
 /* Footer */
 footer {
     text-align: center;

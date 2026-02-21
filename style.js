@@ -1,33 +1,21 @@
-// simple typing animation for the home section
-const words = ['Developer', 'UI/UX Designer', 'Frontend'];
-let txt = '';
-let wordIndex = 0;
-let letterIndex = 0;
-const typingElement = document.querySelector('.typing span');
+// highlight active nav link on scroll
+const sections = document.querySelectorAll('section');
+const navLinks = document.querySelectorAll('.nav-list a');
 
-function type() {
-    if (letterIndex < words[wordIndex].length) {
-        txt += words[wordIndex][letterIndex];
-        typingElement.textContent = txt;
-        letterIndex++;
-        setTimeout(type, 150);
-    } else {
-        setTimeout(erase, 2000);
+window.addEventListener('scroll', () => {
+  let current = '';
+
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 120;
+    if (scrollY >= sectionTop) {
+      current = section.getAttribute('id');
     }
-}
-function erase() {
-    if (letterIndex > 0) {
-        txt = txt.slice(0, -1);
-        typingElement.textContent = txt;
-        letterIndex--;
-        setTimeout(erase, 100);
-    } else {
-        wordIndex = (wordIndex + 1) % words.length;
-        setTimeout(type, 500);
+  });
+
+  navLinks.forEach(link => {
+    link.classList.remove('active');
+    if (link.getAttribute('href') === `#${current}`) {
+      link.classList.add('active');
     }
-}
-document.addEventListener('DOMContentLoaded', () => {
-    if (typingElement) {
-        type();
-    }
+  });
 });
