@@ -1,0 +1,206 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* smooth scroll for nav links */
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #007acc; /* added blue background for top nav */
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+/* adjust text colors when header has background */
+header .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff; /* ensure logo remains visible */
+}
+header nav a {
+    color: rgba(255,255,255,0.8); /* slightly transparent for non-active */
+}
+header nav a:hover,
+header nav a.active {
+    color: #fff;          /* full white for active/hover */
+    background: rgba(255,255,255,0.2); /* subtle highlight pill */
+}
+
+header nav .nav-list {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+header nav .nav-list li {
+    list-style: none;
+}
+header nav a {
+    position: relative;
+    display: inline-block;
+    font-size: 0.95rem;
+    padding: 8px 12px;
+    border-radius: 50px; /* rounded pill by default */
+    transition: color 0.3s, transform 0.3s, background 0.3s;
+}
+header nav a:hover,
+header nav a.active {
+    color: #fff; /* keep text white on blue */
+    transform: scale(1.1);
+}
+header nav a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: #007acc;
+    transition: width 0.3s;
+}
+header nav a:hover::after,
+header nav a.active::after {
+    width: 100%;
+}
+
+/* Home Section */
+.home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding-top: 100px; /* for fixed header */
+    background: #e6f2ff;
+}
+
+.home-image {
+    flex: 1;
+    text-align: center;
+}
+/* flip container for profile */
+.flip-container {
+    perspective: 1000px;
+    display: inline-block;
+}
+.flipper {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    transition: 0.6s;
+    transform-style: preserve-3d;
+}
+.flip-container:hover .flipper {
+    transform: rotateY(180deg);
+}
+.flipper .front,
+.flipper .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 50%;
+}
+.flipper .back {
+    transform: rotateY(180deg);
+}
+.home-image .home-img {
+    max-width: 250px;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.home-content {
+    flex: 2;
+    padding: 20px;
+}
+.home-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+.home-content h1 span {
+    color: #007acc;
+}
+.home-content .typing {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+.home-content p {
+    max-width: 600px;
+    margin-bottom: 20px;
+}
+.home-content .social-icons a {
+    margin-right: 10px;
+    font-size: 1.2rem;
+    color: #007acc;
+}
+
+/* Sections */
+.section {
+    padding: 80px 40px;
+    background: #fff;
+    margin-top: 20px;
+}
+.section:nth-of-type(even) {
+    background: #f1f1f1;
+}
+.section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #007acc;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    header {
+        padding: 15px 20px;
+    }
+    header nav {
+        display: none;
+    }
+    /* Could add mobile nav toggle later */
+    .home {
+        flex-direction: column;
+    }
+    .home-image,
+    .home-content {
+        width: 100%;
+        text-align: center;
+    }
+    .home-content h1 {
+        font-size: 2rem;
+    }
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #222;
+    color: #fff;
+    font-size: 0.9rem;
+    margin-top: 40px;
+}
