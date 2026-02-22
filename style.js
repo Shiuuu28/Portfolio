@@ -19,3 +19,24 @@ window.addEventListener('scroll', () => {
     }
   });
 });
+
+// typing animation for the "I'm a ..." text
+const typingElement = document.querySelector('.typing span');
+const typingText = 'Frontend UI/UX Designer';
+let typingIndex = 0;
+
+function typeWriter() {
+  if (typingIndex < typingText.length) {
+    typingElement.textContent += typingText.charAt(typingIndex);
+    typingIndex++;
+    setTimeout(typeWriter, 100);
+  }
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  // clear in case of reload
+  if (typingElement) {
+    typingElement.textContent = '';
+    typeWriter();
+  }
+});
