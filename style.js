@@ -40,3 +40,4 @@ window.addEventListener('DOMContentLoaded', () => {
     typeWriter();
   }
 });
+
