@@ -8,6 +8,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-p+XfH+Vn1s4Ekd0TG9s4eVFvLH7qfWmTI/An+m9oi4A3eRnRrGUb76CVuKwE6+KRP5xQxS3lz+PKTnSh+GxV1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- AOS (Animate On Scroll) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-G3i8u/kC6n8hGpcX4A/7R8eP3mjNyBuCEuK7hBxAKFh2tTNfprvV5IR5t6hFGxh25zfg9B3eXwd6zGY3cWg9JA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
     <title>Brendo | Portfolio</title>
 </head>    
@@ -17,16 +19,17 @@
 
     <nav>
         <ul class="nav-list">
-            <li><a href="#" class="active" title="Home (placeholder)">Home</a></li>
-            <li><a href="#skills" title="Placeholder: Skills">Skills</a></li>
-            <li><a href="#education" title="Placeholder: Education">Education</a></li>
-            <li><a href="#experience" title="Placeholder: Experience">Experience</a></li>
-            <li><a href="#contact" title="Placeholder: Contact">Contact</a></li>
+            <li><a href="#" class="active" title="Home (placeholder)"><i class="fa-solid fa-house"></i> Home</a></li>
+            <li><a href="#skills" title="Placeholder: Skills"><i class="fa-solid fa-tools"></i> Skills</a></li>
+            <li><a href="#education" title="Placeholder: Education"><i class="fa-solid fa-graduation-cap"></i> Education</a></li>
+            <li><a href="#experience" title="Placeholder: Experience"><i class="fa-solid fa-briefcase"></i> Experience</a></li>
+            <li><a href="#projects" title="Placeholder: Projects"><i class="fa-solid fa-folder-open"></i> Projects</a></li>
+            <li><a href="#contact" title="Placeholder: Contact"><i class="fa-solid fa-envelope"></i> Contact</a></li>
         </ul>
     </nav>
  </header>
-    <section class="home" id="home">
-        <div class="home-image">
+    <section class="home" id="home" data-aos="fade-up">
+        <div class="home-image" data-aos="zoom-in">
             <div class="flip-container">
                 <div class="flipper">
                     <img src="images/me.png" alt="Photo of Brendo" class="front home-img">
@@ -34,7 +37,7 @@
                 </div>
             </div>
         </div>
-        <div class="home-content">
+        <div class="home-content" data-aos="fade-left">
             <h1>Hello, I'm <span>Brendo</span></h1>
             <h3 class="typing">I'm a <span></span></h3>
             <p>
@@ -43,22 +46,26 @@
             </p>
             <div class="social-icons">
                 <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-                <!-- add other social links -->
+                <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#" aria-label="Dribbble"><i class="fa-brands fa-dribbble"></i></a>
             </div>
         </div>
-    </section>
-
-    <section id="skills" class="section">
-        <h2>Skills</h2>
-        <p>List of key skills.</p>
+    </section> data-aos="fade-up">
+        <h2><i class="fa-solid fa-tools"></i> Skills</h2>
+        <p>Key technologies I use on every project.</p>
         <div class="skills-list">
-        <span>HTML</span>
-        <span>CSS</span>
+        <span><i class="fa-brands fa-html5"></i> HTML</span>
+        <span><i class="fa-brands fa-css3-alt"></i> CSS</span>
+        <span><i class="fa-brands fa-js"></i> JavaScript</span>
+        <span><i class="fa-brands fa-git-alt"></i> Git</span>
+        <span><i class="fa-brands fa-react"></i> React</span>
+        <span><i class="fa-solid fa-mobile-screen-button"></i> Responsive Design</span>
         <span>JavaScript</span>
         <span>Git</span>
 </div>
-    </section>
-
+    </section> data-aos="fade-up">
+  <h2><i class="fa-solid fa-graduation-cap"></i> 
     <section id="education" class="section">
   <h2>Education</h2>
 
@@ -74,10 +81,10 @@
   </div>
 </section>
 
-   <section id="experience" class="section">
-  <h2>Experience</h2>
+<section id="experience" class="section" data-aos="fade-up">
+  <h2><i class="fa-solid fa-briefcase"></i> Experience</h2>
 
-  <div class="exp-item">
+  <div class="exp-item" data-aos="fade-right">
     <h3>Frontend Developer (Freelance)</h3>
     <p>2025 – Present</p>
     <ul>
@@ -86,7 +93,7 @@
     </ul>
   </div>
 
-  <div class="exp-item">
+  <div class="exp-item" data-aos="fade-left">
     <h3>Web Developer Intern</h3>
     <p>Tech Startup — 2026</p>
     <ul>
@@ -98,15 +105,32 @@
   </div>
 </section>
 
-   <section id="contact" class="section">
-  <h2>Contact Me</h2>
+<!-- Projects placeholder -->
+<section id="projects" class="section" data-aos="fade-up">
+  <h2><i class="fa-solid fa-folder-open"></i> Projects</h2>
+  <div class="projects-grid">
+    <div class="project-card" data-aos="zoom-in">
+      <div class="project-thumb"><img src="https://via.placeholder.com/400x200?text=Project+Image" alt="Project screenshot" /></div>
+      <h3>Project Title</h3>
+      <p>Short description of the project. <a href="#">View more</a></p>
+    </div>
+    <div class="project-card" data-aos="zoom-in" data-aos-delay="100">
+      <div class="project-thumb"><img src="https://via.placeholder.com/400x200?text=Project+Image" alt="Project screenshot" /></div>
+      <h3>Project Title</h3>
+      <p>Short description of the project. <a href="#">View more</a></p>
+    </div>
+  </div>
+</section>
+
+   <section id="contact" class="section" data-aos="fade-up">
+  <h2><i class="fa-solid fa-envelope"></i> Contact Me</h2>
   <p>Let’s work together! Send me a message 👇</p>
 
-  <form class="contact-form">
+  <form class="contact-form" data-aos="zoom-in">
     <input type="text" placeholder="Brendo Dellatan Jr." readonly>
     <input type="email" placeholder="dellatanbrendojr21@gmail.com" readonly>
     <textarea placeholder="Your Message" rows="5" required></textarea>
-    <button type="submit">Send Message</button>
+    <button type="submit"><i class="fa-solid fa-paper-plane"></i> Send Message</button>
   </form>
 </section>
     <footer>
@@ -115,5 +139,10 @@
 
     <!-- External script -->
     <script src="style.js"></script>
+    <!-- AOS init -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-A7AYkZen0w6oJrjvB+oQJp4bM6YBi3LDBJk9uMiD4SGQdqU+VrAXb7qbVOg1lEq+smQ3bd+4eE1L0QW+Oj1nMg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+    </script>
 </body>
 </html>

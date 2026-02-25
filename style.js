@@ -39,5 +39,19 @@ window.addEventListener('DOMContentLoaded', () => {
     typingElement.textContent = '';
     typeWriter();
   }
+
+  // header and nav animation
+  const header = document.querySelector('header');
+  if (header) {
+    header.classList.add('fade-in');
+  }
+
+  const navLinks = document.querySelectorAll('header nav a');
+  navLinks.forEach((link, idx) => {
+    link.style.opacity = 0;
+    setTimeout(() => {
+      link.classList.add('fade-in');
+    }, 150 * idx);
+  });
 });
 
