@@ -20,16 +20,30 @@ window.addEventListener('scroll', () => {
   });
 });
 
-// typing animation for the "I'm a ..." text
+// enhanced typing animation for the "I'm a ..." text with cursor
 const typingElement = document.querySelector('.typing span');
 const typingText = 'Frontend UI/UX Designer';
 let typingIndex = 0;
+let isDeleting = false;
 
 function typeWriter() {
-  if (typingIndex < typingText.length) {
+  if (!isDeleting && typingIndex < typingText.length) {
     typingElement.textContent += typingText.charAt(typingIndex);
     typingIndex++;
-    setTimeout(typeWriter, 100);
+    setTimeout(typeWriter, 80);
+  } else if (isDeleting && typingIndex > 0) {
+    typingElement.textContent = typingText.substring(0, typingIndex - 1);
+    typingIndex--;
+    setTimeout(typeWriter, 40);
+  } else if (!isDeleting && typingIndex === typingText.length) {
+    // Pause before deleting
+    setTimeout(() => {
+      isDeleting = true;
+      typeWriter();
+    }, 2000);
+  } else if (isDeleting && typingIndex === 0) {
+    isDeleting = false;
+    setTimeout(typeWriter, 500);
   }
 }
 
@@ -52,6 +66,22 @@ window.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
       link.classList.add('fade-in');
     }, 150 * idx);
+  });
+
+  // smooth scroll for nav links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href').substring(1);
+      const targetElement = document.getElementById(targetId);
+      
+      if (targetElement) {
+        targetElement.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    });
   });
 });
 
