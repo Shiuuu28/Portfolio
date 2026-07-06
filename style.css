@@ -306,6 +306,20 @@ header nav a::after {
     border-radius: 2px;
 }
 
+.platforms-title {
+    font-size: 1.6rem;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    color: #ffffff;
+    font-weight: 700;
+    display: inline-block;
+}
+
+.platforms-title i {
+    margin-right: 10px;
+    color: #00d4ff;
+}
+
 .section > p {
     color: rgba(255, 255, 255, 0.7);
     font-size: 1.1rem;
