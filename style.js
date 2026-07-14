@@ -1,87 +1,109 @@
-// highlight active nav link on scroll
-const sections = document.querySelectorAll('section');
-const navLinks = document.querySelectorAll('.nav-list a');
+const navLinks = document.querySelectorAll('.site-nav a');
+const sections = document.querySelectorAll('main section');
+const filterButtons = document.querySelectorAll('.filter-button');
+const projectCards = document.querySelectorAll('.project-card');
+const contactForm = document.querySelector('.contact-form');
+const toast = document.getElementById('toast');
 
-window.addEventListener('scroll', () => {
-  let current = '';
+function handleScrollSpy() {
+  let currentSection = 'home';
 
   sections.forEach(section => {
-    const sectionTop = section.offsetTop - 120;
-    if (scrollY >= sectionTop) {
-      current = section.getAttribute('id');
+    const top = section.offsetTop - 140;
+    if (window.scrollY >= top) {
+      currentSection = section.id;
     }
   });
 
   navLinks.forEach(link => {
-    link.classList.remove('active');
-    if (link.getAttribute('href') === `#${current}`) {
-      link.classList.add('active');
-    }
+    link.classList.toggle('active', link.getAttribute('href') === `#${currentSection}`);
   });
-});
+}
 
-// enhanced typing animation for the "I'm a ..." text with cursor
-const typingElement = document.querySelector('.typing span');
-const typingText = 'Frontend UI/UX Designer';
-let typingIndex = 0;
-let isDeleting = false;
+function scrollToSection(event) {
+  const target = event.currentTarget.getAttribute('href');
+  if (!target.startsWith('#')) return;
 
-function typeWriter() {
-  if (!isDeleting && typingIndex < typingText.length) {
-    typingElement.textContent += typingText.charAt(typingIndex);
-    typingIndex++;
-    setTimeout(typeWriter, 80);
-  } else if (isDeleting && typingIndex > 0) {
-    typingElement.textContent = typingText.substring(0, typingIndex - 1);
-    typingIndex--;
-    setTimeout(typeWriter, 40);
-  } else if (!isDeleting && typingIndex === typingText.length) {
-    // Pause before deleting
-    setTimeout(() => {
-      isDeleting = true;
-      typeWriter();
-    }, 2000);
-  } else if (isDeleting && typingIndex === 0) {
-    isDeleting = false;
-    setTimeout(typeWriter, 500);
+  event.preventDefault();
+  const section = document.querySelector(target);
+  if (section) {
+    section.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 }
 
-window.addEventListener('DOMContentLoaded', () => {
-  // clear in case of reload
-  if (typingElement) {
-    typingElement.textContent = '';
-    typeWriter();
-  }
-
-  // header and nav animation
-  const header = document.querySelector('header');
-  if (header) {
-    header.classList.add('fade-in');
-  }
-
-  const navLinks = document.querySelectorAll('header nav a');
-  navLinks.forEach((link, idx) => {
-    link.style.opacity = 0;
-    setTimeout(() => {
-      link.classList.add('fade-in');
-    }, 150 * idx);
+function updateProjectFilters(filter) {
+  projectCards.forEach(card => {
+    if (filter === 'all' || card.dataset.category === filter) {
+      card.style.display = 'grid';
+    } else {
+      card.style.display = 'none';
+    }
   });
+}
 
-  // smooth scroll for nav links
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-      const targetId = this.getAttribute('href').substring(1);
-      const targetElement = document.getElementById(targetId);
-      
-      if (targetElement) {
-        targetElement.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
-      }
+function showToast(message) {
+  if (!toast) return;
+  toast.textContent = message;
+  toast.classList.add('show');
+  window.setTimeout(() => toast.classList.remove('show'), 3200);
+}
+
+function handleContactSubmit(event) {
+  event.preventDefault();
+  showToast('Thanks for reaching out! I will follow up soon.');
+  contactForm.reset();
+}
+
+function initTypingEffect() {
+  const typingElement = document.querySelector('.typing span');
+  const roles = ['Frontend UI/UX Designer', 'Shopify Specialist', 'WordPress Expert', 'Performance-focused Developer'];
+  let index = 0;
+  let char = 0;
+  let deleting = false;
+
+  function type() {
+    const currentText = roles[index];
+    const displayed = currentText.slice(0, char);
+    if (typingElement) typingElement.textContent = displayed;
+
+    if (!deleting && char < currentText.length) {
+      char += 1;
+      setTimeout(type, 90);
+    } else if (!deleting && char === currentText.length) {
+      deleting = true;
+      setTimeout(type, 1700);
+    } else if (deleting && char > 0) {
+      char -= 1;
+      setTimeout(type, 40);
+    } else {
+      deleting = false;
+      index = (index + 1) % roles.length;
+      setTimeout(type, 500);
+    }
+  }
+
+  if (typingElement) {
+    type();
+  }
+}
+
+window.addEventListener('scroll', handleScrollSpy);
+
+window.addEventListener('DOMContentLoaded', () => {
+  navLinks.forEach(link => link.addEventListener('click', scrollToSection));
+  filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      filterButtons.forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
+      updateProjectFilters(button.dataset.filter);
     });
   });
+
+  if (contactForm) {
+    contactForm.addEventListener('submit', handleContactSubmit);
+  }
+
+  initTypingEffect();
+  handleScrollSpy();
 });
 

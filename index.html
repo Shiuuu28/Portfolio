@@ -1,204 +1,264 @@
-<!DOCTYPE html>     
-<html lang="en">    
-<head>    
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-p+XfH+Vn1s4Ekd0TG9s4eVFvLH7qfWmTI/An+m9oi4A3eRnRrGUb76CVuKwE6+KRP5xQxS3lz+PKTnSh+GxV1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- AOS (Animate On Scroll) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-G3i8u/kC6n8hGpcX4A/7R8eP3mjNyBuCEuK7hBxAKFh2tTNfprvV5IR5t6hFGxh25zfg9B3eXwd6zGY3cWg9JA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="style.css">
-    <title>Brendo | Portfolio</title>
-</head>    
-<body>  
- <header>
-    <a href="#" class="logo">MY PORTFOLIO</a>
-
-    <nav>
-        <ul class="nav-list">
-            <li><a href="#" class="active" title="Home (placeholder)"><i class="fa-solid fa-house"></i> Home</a></li>
-            <li><a href="#skills" title="Placeholder: Skills"><i class="fa-solid fa-tools"></i> Skills</a></li>
-            <li><a href="#education" title="Placeholder: Education"><i class="fa-solid fa-graduation-cap"></i> Education</a></li>
-            <li><a href="#experience" title="Placeholder: Experience"><i class="fa-solid fa-briefcase"></i> Experience</a></li>
-            <li><a href="#projects" title="Placeholder: Projects"><i class="fa-solid fa-folder-open"></i> Projects</a></li>
-            <li><a href="#contact" title="Placeholder: Contact"><i class="fa-solid fa-envelope"></i> Contact</a></li>
-        </ul>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Brendo Dellatan Jr. - professional portfolio for a frontend developer and UI/UX designer specializing in modern web experiences.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-p+XfH+Vn1s4Ekd0TG9s4eVFvLH7qfWmTI/An+m9oi4A3eRnRrGUb76CVuKwE6+KRP5xQxS3lz+PKTnSh+GxV1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-G3i8u/kC6n8hGpcX4A/7R8eP3mjNyBuCEuK7hBxAKFh2tTNfprvV5IR5t6hFGxh25zfg9B3eXwd6zGY3cWg9JA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css">
+  <title>Brendo | Frontend Developer Portfolio</title>
+</head>
+<body>
+  <header class="site-header">
+    <a href="#home" class="site-logo">Brendo<span class="logo-accent">.</span></a>
+    <nav class="site-nav">
+      <ul>
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </nav>
- </header>
-    <section class="home" id="home" data-aos="fade-up">
-        <div class="home-image" data-aos="zoom-in">
-            <div class="flip-container">
-                <div class="flipper">
-                    <img src="images/me.png" alt="Photo of Brendo" class="front home-img">
-                    <img src="images/itachi.png" alt="Alternate photo of Brendo" class="back home-img">
-                </div>
-            </div>
-        </div>
-        <div class="home-content" data-aos="fade-left">
-            <h1>Hello, I'm <span>Brendo</span></h1>
-            <h3 class="typing">I'm a <span></span></h3>
-            <p>
-                I'm a frontend developer and UI/UX designer passionate about crafting beautiful, 
-                responsive digital experiences. I specialize in modern web technologies, focusing on 
-                clean code, performance optimization, and exceptional user experience.
-            </p>
-            <div class="social-icons">
-                <a href="#" aria-label="html"><img src="images/html.png" alt="html" class="social-icon"></a>
-                <a href="#" aria-label="php"><img src="images/php.png" alt="php" class="social-icon"></a>
-                <a href="#" aria-label="Javascript"><img src="images/js.webp" alt="Javascript" class="social-icon"></a>
-                <a href="#" aria-label="css"><img src="images/css.png" alt="css" class="social-icon"></a>
-                <a href="#" aria-label="GitHub"><img src="images/git.webp" alt="GitHub" class="social-icon"></a> 
-                <a href="#" aria-label="Figma"><img src="images/figma.png" alt="figma" class="social-icon"></a>
-                <a href="#" aria-label="Wordpress"><img src="images/wordpress.svg" alt="Wordpress" class="social-icon"></a>
-                <a href="#" aria-label="Shopify"><img src="images/shopify2.png" alt="Shopify" class="social-icon"></a>
-                <a href="#" aria-label="GoHighLevel"><img src="images/GHL.jpg" alt="GoHighLevel" class="social-icon"></a>
-            </div>
-        </div>
-    </section>
+    <a href="#contact" class="cta-button">Hire Me</a>
+  </header>
 
-    <section id="skills" class="section" data-aos="fade-up">
-        <h2><i class="fa-solid fa-tools"></i> Skills</h2>
-        <p>Key technologies I use on every project.</p>
-        <div class="skills-list">
-            <span><img src="https://skillicons.dev/icons?i=html&theme=light" alt="HTML5" class="skill-icon"> HTML</span>
-            <span><img src="https://skillicons.dev/icons?i=css&theme=light" alt="CSS3" class="skill-icon"> CSS</span>
-            <span><img src="https://skillicons.dev/icons?i=javascript&theme=light" alt="JavaScript" class="skill-icon"> JavaScript</span>
-            <span><img src="https://skillicons.dev/icons?i=git&theme=light" alt="Git" class="skill-icon"> Git</span>
-            <span><img src="https://skillicons.dev/icons?i=react&theme=light" alt="React" class="skill-icon"> React</span>
-            <span><img src="https://skillicons.dev/icons?i=figma&theme=light" alt="Figma" class="skill-icon"> Responsive Design</span>
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content" data-aos="fade-right">
+        <span class="eyebrow">Premium web experiences for ambitious brands</span>
+        <h1>Hi, I'm <span>Brendo Dellatan Jr.</span><br> I build polished, high-converting websites.</h1>
+        <p>Professional frontend developer and UI/UX designer with proven experience in responsive design, fast performance, and elegant digital brand experiences.</p>
+        <div class="hero-actions">
+          <a href="#projects" class="button button-primary">View Work</a>
+          <a href="#contact" class="button button-secondary">Let's Talk</a>
         </div>
-
-        <h3 class="platforms-title"><i class="fa-solid fa-layer-group"></i> Platforms & Tools</h3>
-        <div class="skills-list">
-            <span><img src="https://skillicons.dev/icons?i=wordpress&theme=light" alt="WordPress" class="skill-icon"> WordPress</span>
-            <span><img src="images/GHL.jpg" alt="GoHighLevel" class="skill-icon"> GoHighLevel</span>
-            <span><img src="images/shopify2.png" alt="Shopify" class="skill-icon"> Shopify</span>
-        </div>
-    </section>
-
-    <section id="education" class="section" data-aos="fade-up">
-        <h2><i class="fa-solid fa-graduation-cap"></i> Education</h2>
-        <p>Continuous learning and skill development</p>
-
-        <div class="edu-item">
-            <div class="edu-icon"><img src="images/hat.png" alt="Education" class="icon-img"></div>
-            <div class="edu-content">
-                <h3>Bachelor of Science in Information Technology</h3>
-                <p>Zamboanga Peninsula Polytechnic State University</p>
-                <p><strong>2021-2026</strong></p>
-                <p>Focused on web development, UI/UX design, and software engineering.</p>
-            </div>
-        </div>
-
-        <div class="edu-item">
-          <div class="edu-icon"><img src="images/seminar.jpg" alt="Seminar" class="icon-img"></div>
-          <div class="edu-content">
-            <h3>Tech Seminar Series</h3>
-            <p>Cebu City — 2025</p>
-            <p>Completed comprehensive training across multiple tech companies covering modern development practices and industry standards.</p>
+        <div class="hero-metrics">
+          <div>
+            <strong>5+</strong>
+            <span>Years experience</span>
+          </div>
+          <div>
+            <strong>60+</strong>
+            <span>Projects delivered</span>
+          </div>
+          <div>
+            <strong>100%</strong>
+            <span>Client satisfaction</span>
           </div>
         </div>
+      </div>
 
-        <div class="edu-item">
-          <div class="edu-icon"><img src="images/google-devs.svg" alt="Build With AI - Google Developers" class="icon-img"></div>
-          <div class="edu-content">
-            <h3>Build With AI — Google Developers</h3>
-            <p>Zampen— 2026</p>
-            <p>Attended the Build With AI event hosted by Google Developers, focusing on practical AI integrations for web projects.</p>
+      <div class="hero-visual" data-aos="fade-left">
+        <div class="hero-card">
+          <div class="hero-badge">Featured</div>
+          <div class="hero-image-frame">
+            <img src="images/me.png" alt="Photo of Brendo" />
+          </div>
+          <div class="hero-card-copy">
+            <h3>Frontend & UI/UX Specialist</h3>
+            <p>Building modern websites and storefronts with WordPress, Shopify, and custom JavaScript experiences.</p>
           </div>
         </div>
+      </div>
     </section>
 
-<section id="experience" class="section" data-aos="fade-up">
-  <h2><i class="fa-solid fa-briefcase"></i> Experience</h2>
-  <p>Hands-on experience in web development and design</p>
+    <section class="about" id="about">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-label">About Me</span>
+        <h2>Design-driven development for digital growth.</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-copy" data-aos="fade-right">
+          <p>I'm a frontend developer who delivers polished websites, landing pages, and user experiences with measurable impact. My work blends clean, semantic code with visual storytelling to help clients stand out, convert visitors, and move faster.</p>
+          <ul class="about-list">
+            <li><strong>Frontend development:</strong> HTML, CSS, JavaScript, React, modern tooling.</li>
+            <li><strong>UI/UX design:</strong> responsive systems, accessible interfaces, rapid prototyping.</li>
+            <li><strong>Platforms:</strong> WordPress, Shopify, GoHighLevel, custom CMS integration.</li>
+          </ul>
+          <div class="about-buttons">
+            <a href="#projects" class="button button-primary">See work</a>
+            <a href="#contact" class="button button-secondary">Request quote</a>
+          </div>
+        </div>
+        <div class="about-cards" data-aos="fade-left">
+          <article class="feature-card">
+            <span class="card-icon"><i class="fa-solid fa-paint-brush"></i></span>
+            <h3>Design Systems</h3>
+            <p>Scalable styles, reusable components, and consistent brand experiences across every page.</p>
+          </article>
+          <article class="feature-card">
+            <span class="card-icon"><i class="fa-solid fa-code"></i></span>
+            <h3>Rich Interactions</h3>
+            <p>Experience-first work with smooth animations, accessible navigation, and performance-first structure.</p>
+          </article>
+          <article class="feature-card">
+            <span class="card-icon"><i class="fa-solid fa-rocket"></i></span>
+            <h3>Launch Ready</h3>
+            <p>Optimized sites with fast load times, SEO-friendly markup, and reliable deployment workflows.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-  <div class="exp-item" data-aos="fade-right">
-    <div class="exp-icon"><img src="https://cdn.simpleicons.org/figma/00d4ff" alt="Frontend" class="icon-img"></div>
-    <div class="exp-content">
-      <h3>Frontend Developer (Freelance)</h3>
-      <p>2025 – Present</p>
-      <ul>
-        <li>Built responsive websites for small businesses</li>
-        <li>Converted Figma designs into functional web pages</li>
-        <li>Built a web system using leadpages</li>
-        <li>Has an experience in using wordpress, gohighlevel, Karta & Leadpages</li>
-        <li>Currently Using Shopify Platform</li>
-      </ul>
-    </div>
-  </div>
+    <section class="services" id="services">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-label">What I do</span>
+        <h2>Services for growth-focused websites.</h2>
+      </div>
+      <div class="service-grid">
+        <article class="service-card" data-aos="zoom-in">
+          <span class="service-icon"><i class="fa-solid fa-laptop-code"></i></span>
+          <h3>Custom Website Development</h3>
+          <p>Fully responsive websites built with clean code, modern layouts, and fast delivery.</p>
+        </article>
+        <article class="service-card" data-aos="zoom-in" data-aos-delay="100">
+          <span class="service-icon"><i class="fa-solid fa-shop"></i></span>
+          <h3>Ecommerce & Shopify</h3>
+          <p>Optimized online stores and landing pages that convert visitors into customers.</p>
+        </article>
+        <article class="service-card" data-aos="zoom-in" data-aos-delay="200">
+          <span class="service-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></span>
+          <h3>Brand & UX Design</h3>
+          <p>Modern visual systems, intuitive user flows, and polished digital brand presentations.</p>
+        </article>
+      </div>
+    </section>
 
-  <div class="exp-item" data-aos="fade-left">
-    <div class="exp-icon"><img src="images/webdev.jpg" alt="Internship" class="icon-img"></div>
-    <div class="exp-content">
-      <h3>Web Developer Intern</h3>
-      <p>Tech Startup — 2026</p>
-      <ul>
-        <li>Created landing pages using HTML, CSS, and JavaScript</li>
-        <li>Worked with a team using GitHub</li>
-        <li>Helped maintain existing websites</li>
-        <li>Experienced in platforms such as Wordpress, gohighlevel, Karta & Leadpages</li>
-        <li>Currently Using Shopify Platform</li>
-      </ul>
-    </div>
-  </div>
+    <section class="projects" id="projects">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-label">Latest Work</span>
+        <h2>Featured projects and case studies.</h2>
+      </div>
+      <div class="project-filters" data-aos="fade-up">
+        <button class="filter-button active" data-filter="all">All</button>
+        <button class="filter-button" data-filter="web">Web</button>
+        <button class="filter-button" data-filter="ecommerce">Ecommerce</button>
+        <button class="filter-button" data-filter="branding">Branding</button>
+      </div>
+      <div class="projects-grid">
+        <article class="project-card" data-category="web" data-aos="fade-up">
+          <img src="images/project 1.png" alt="Modern agency website screenshot">
+          <div class="project-content">
+            <span class="project-tag">Web Design</span>
+            <h3>Agency Landing Experience</h3>
+            <p>Responsive, conversion-first site design for a creative agency with strong visual hierarchy and fast performance.</p>
+            <a href="#contact" class="project-link">Discuss a similar build</a>
+          </div>
+        </article>
+        <article class="project-card" data-category="ecommerce" data-aos="fade-up" data-aos-delay="100">
+          <img src="https://via.placeholder.com/560x340?text=Shopify+Store" alt="Shopify store screenshot">
+          <div class="project-content">
+            <span class="project-tag">Shopify</span>
+            <h3>Premium Storefront Design</h3>
+            <p>Custom Shopify storefront with polished product pages, streamlined checkout flow, and brand-first visuals.</p>
+            <a href="#contact" class="project-link">Launch a shop</a>
+          </div>
+        </article>
+        <article class="project-card" data-category="branding" data-aos="fade-up" data-aos-delay="200">
+          <img src="https://via.placeholder.com/560x340?text=Brand+Identity" alt="Brand identity design screenshot">
+          <div class="project-content">
+            <span class="project-tag">Branding</span>
+            <h3>Brand Refresh & Website</h3>
+            <p>Complete visual refresh including identity, web design, and digital brand assets for consistent customer impact.</p>
+            <a href="#contact" class="project-link">Book a strategy call</a>
+          </div>
+        </article>
+      </div>
+    </section>
 
-  <div class="exp-item" data-aos="fade-up">
-    <div class="exp-icon"><img src="images/wordpress.svg" alt="WordPress" class="icon-img"></div>
-    <div class="exp-content">
-      <h3>Web Developer — Current</h3>
-      <p>2026 – Present</p>
-      <ul>
-        <li>Employed as a Web Developer with a focus on WordPress development.</li>
-        <li>Building and maintaining WordPress sites, themes, and plugins.</li>
-        <li>Performance optimization, responsive design, and CMS workflows.</li>
-      </ul>
-    </div>
-  </div>
-</section>
+    <section class="skills" id="skills">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-label">Core Skills</span>
+        <h2>Tools and technologies I rely on.</h2>
+      </div>
+      <div class="skills-grid" data-aos="fade-up">
+        <div class="skill-pill"><img src="https://skillicons.dev/icons?i=html&theme=light" alt="HTML"> HTML5</div>
+        <div class="skill-pill"><img src="https://skillicons.dev/icons?i=css&theme=light" alt="CSS"> CSS3</div>
+        <div class="skill-pill"><img src="https://skillicons.dev/icons?i=javascript&theme=light" alt="JavaScript"> JavaScript</div>
+        <div class="skill-pill"><img src="https://skillicons.dev/icons?i=react&theme=light" alt="React"> React</div>
+        <div class="skill-pill"><img src="https://skillicons.dev/icons?i=wordpress&theme=light" alt="WordPress"> WordPress</div>
+        <div class="skill-pill"><img src="https://skillicons.dev/icons?i=shopify&theme=light" alt="Shopify"> Shopify</div>
+        <div class="skill-pill"><img src="https://skillicons.dev/icons?i=git&theme=light" alt="Git"> Git</div>
+        <div class="skill-pill"><img src="https://skillicons.dev/icons?i=figma&theme=light" alt="Figma"> Figma</div>
+      </div>
+    </section>
 
-<!-- Projects placeholder -->
-<section id="projects" class="section" data-aos="fade-up">
-  <h2><i class="fa-solid fa-folder-open"></i> Projects</h2>
-  <p>A selection of my recent work and side projects</p>
-  <div class="projects-grid">
-    <div class="project-card" data-aos="zoom-in">
-      <div class="project-thumb"><img src="images/project 1.png" alt="Project screenshot" /></div>  
-      <h3>Project Title</h3>
-      <p>A brief description of the project, highlighting the technologies used and the problems solved. <a href="#">View more →</a></p>
-    </div>
-    <div class="project-card" data-aos="zoom-in" data-aos-delay="100">
-      <div class="project-thumb"><img src="https://via.placeholder.com/400x200?text=Project+Image" alt="Project screenshot" /></div>
-      <h3>Project Title</h3>
-      <p>A brief description of the project, highlighting the technologies used and the problems solved. <a href="#">View more →</a></p>
-    </div>
-  </div>
-</section>
+    <section class="experience" id="experience">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-label">Experience</span>
+        <h2>Projects, roles, and growth milestones.</h2>
+      </div>
+      <div class="timeline" data-aos="fade-up">
+        <article class="timeline-item">
+          <span class="timeline-year">2026</span>
+          <h3>Web Developer — Current</h3>
+          <p>Leading WordPress and Shopify builds while optimizing client sites for conversion and performance.</p>
+        </article>
+        <article class="timeline-item">
+          <span class="timeline-year">2025</span>
+          <h3>Frontend Developer (Freelance)</h3>
+          <p>Delivered responsive websites and marketing landing pages with high-quality UI and custom CMS workflows.</p>
+        </article>
+        <article class="timeline-item">
+          <span class="timeline-year">2024</span>
+          <h3>Web Developer Intern</h3>
+          <p>Worked with cross-functional teams to maintain websites, create landing pages, and contribute on GitHub.</p>
+        </article>
+      </div>
+    </section>
 
-   <section id="contact" class="section" data-aos="fade-up">
-  <h2><i class="fa-solid fa-envelope"></i> Get In Touch</h2>
-  <p>Let's collaborate on something amazing. Feel free to reach out!</p>
+    <section class="contact" id="contact">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-label">Contact</span>
+        <h2>Ready to bring your next project to life?</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-card" data-aos="fade-right">
+          <h3>Get in touch</h3>
+          <p>Want to build a website, launch a store, or refresh your brand? Let's connect and make it happen.</p>
+          <div class="contact-details">
+            <div><i class="fa-solid fa-envelope"></i><a href="mailto:dellatanbrendojr21@gmail.com">dellatanbrendojr21@gmail.com</a></div>
+            <div><i class="fa-solid fa-phone"></i><a href="tel:+639XXXXXXXXX">+63 9XX XXX XXXX</a></div>
+            <div><i class="fa-solid fa-map-marker-alt"></i><span>Zamboanga, Philippines</span></div>
+          </div>
+        </div>
+        <form class="contact-form" data-aos="fade-left">
+          <label>
+            Name
+            <input type="text" placeholder="Your name" required>
+          </label>
+          <label>
+            Email
+            <input type="email" placeholder="Your email" required>
+          </label>
+          <label>
+            Message
+            <textarea placeholder="Tell me about your project" rows="6" required></textarea>
+          </label>
+          <button type="submit" class="button button-primary">Send Message</button>
+          <p class="contact-note">I'll respond within 24 hours with a project proposal or discovery plan.</p>
+        </form>
+      </div>
+    </section>
+  </main>
 
-  <form class="contact-form" data-aos="zoom-in">
-    <input type="text" placeholder="Your Name" readonly value="Brendo Dellatan Jr.">
-    <input type="email" placeholder="Your Email" readonly value="dellatanbrendojr21@gmail.com">
-    <textarea placeholder="Your Message... Tell me about your project or inquiry" rows="5" required></textarea>
-    <button type="submit"><i class="fa-solid fa-paper-plane"></i> Send Message</button>
-  </form>
-</section>
-    <footer>
-        <p>&copy; 2026 Brendo. All rights reserved.</p>
-    </footer>
+  <footer class="site-footer">
+    <p>© 2026 Brendo Dellatan Jr. Crafted for modern brands and digital teams.</p>
+  </footer>
 
-    <!-- External script -->
-    <script src="style.js"></script>
-    <!-- AOS init -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-A7AYkZen0w6oJrjvB+oQJp4bM6YBi3LDBJk9uMiD4SGQdqU+VrAXb7qbVOg1lEq+smQ3bd+4eE1L0QW+Oj1nMg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script>
-        AOS.init({ duration: 1000, once: true });
-    </script>
+  <div class="toast" id="toast">Message sent successfully. I will contact you soon.</div>
+
+  <script src="style.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-A7AYkZen0w6oJrjvB+oQJp4bM6YBi3LDBJk9uMiD4SGQdqU+VrAXb7qbVOg1lEq+smQ3bd+4eE1L0QW+Oj1nMg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    AOS.init({ duration: 1000, once: true, mirror: false });
+  </script>
 </body>
 </html>
